@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+use RegexJapaneseWordList;
+use strict;
+use warnings;
+use utf8;
+use feature 'say';
+
+my $check = RegexJapaneseWordList->new();
+my $loadfile = 'list.yaml';
+my @text = qw(朝鮮慰安婦 日本軍 東京特許許可局 日本橋 韓国);
+
+foreach (@text){
+	say $check->regex($_, $loadfile);
+}
+
